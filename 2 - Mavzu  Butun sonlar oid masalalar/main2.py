@@ -2,7 +2,7 @@
 # Integer1. Uzunlik L santimetrda berilgan. Undagi to'liq metrlar sonini aniqlovchi programma tuzilsin.
 # (1m=100cm)
 
-L = int(input('Santimetrni kiriting: '))
+L = int(input("Santimetrni kiriting: "))
 
 m = L / 100
 print('Metr: ', m)
