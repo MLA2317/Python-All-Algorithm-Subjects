@@ -461,15 +461,15 @@ else:
     print('Farzin bir yurishda birinchi maydondan ikkinchiga ota olmaydi')
 
 
-# Boolean40. Shaxmat doskasining ikkita turli (x1, y1), (×2, y2) koordinalari berilgan (1-8 oraliqda
+# Boolean40. Shaxmat doskasining ikkita turli (x1, y1), (x2, y2) koordinalari berilgan (1-8 oraliqda
 # yotuvchi butun sonlar). Jumlani rostlikka tekshiring: "Ot bir yurishda bir maydondan ikkinchisiga o'ta
 # oladi.
-# 40 - masal
-print('1-8 gacha butun son kiriting')
-x1 = int(input('X1 ni kiriting: ')) # 5 true,  2 False
-y1 = int(input('Y1 ni kiriting: ')) # 2 true,  8 False
-x2 = int(input('X2 ni kiriting: ')) # 4 true,  3 False
-y2 = int(input('Y2 ni kiriting: ')) # 4 true,  7 False
+# 40 - masala
+print("1-8 gacha butun son kiriting")
+x1 = int(input('X1 ni kiriting: '))  # 5 true,  2 False
+y1 = int(input('Y1 ni kiriting: '))  # 2 true,  8 False
+x2 = int(input('X2 ni kiriting: '))  # 4 true,  3 False
+y2 = int(input('Y2 ni kiriting: '))  # 4 true,  7 False
 
 h1 = abs(x2 - x1)
 h2 = abs(y2 - y1)
