@@ -260,11 +260,12 @@ print('Yuzasi:', S)
 A = int(input('A ni kiriting: '))
 B = int(input('B ni kiriiting: '))
 
-a = B
-b = A
+C = A
+A = B
+B = C
 
-print('A ni qiymati:', a)
-print('B ni qiymati:', b)
+print('A ni qiymati:', A)
+print('B ni qiymati:', B)
 
 # 23 masala c++ True
 # Begin23. A,B  va C sonlar berilgan. A ni qiymati B ga, B ni qiymati C ga, va C ni qiymati A ga almashtirsin. A,B va C yangi qiymatlarda ekranga chiqarilsin
@@ -272,9 +273,10 @@ A = int(input('A ni kiriting: '))
 B = int(input('B ni kiriting: '))
 C = int(input('C ni kiriting: '))
 
-a = B
-b = C
-c = A
+D = A
+A = B
+B = C
+C = D
 
 print('A ni qiymati:', a)
 print('B ni qiymati:', b)
@@ -286,13 +288,15 @@ A = int(input('A ni kiriting: '))
 B = int(input('B ni kiriting: '))
 C = int(input('C ni kiriting: '))
 
-a = C
-b = A
-c = B
+D = A
+E = B
+A = C
+B = D
+C = E
 
-print('A ni qiymati:', a)
-print('B ni qiymati:', b)
-print('C ni qiymati:', c)
+print('A ni qiymati:', A)
+print('B ni qiymati:', B)
+print('C ni qiymati:', C)
 
 # 25 masala c++ True
 # Begin25. x ni qiymati berilganda y = 3x oltinchi darajasi - 6x kvadrati - 7 funksiyani qiymati aniqlansin
