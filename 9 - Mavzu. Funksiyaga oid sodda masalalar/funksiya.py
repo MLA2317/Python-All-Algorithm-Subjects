@@ -1454,7 +1454,99 @@ print("ACD uchburchak yuzi:", area_acd)
 print("ACD uchburchak perimetri:", perimeter_acd)
 
 
+# 59 - masala
+import math
 
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+
+def heron_formula(a, b, c):
+    s = (a + b + c) / 2
+    return math.sqrt(s * (s - a) * (s - b) * (s - c))
+
+
+def Area(Xa, Ya, Xb, Yb, Xc, Yc):
+    AB = distance(Xa, Ya, Xb, Yb)
+    BC = distance(Xb, Yb, Xc, Yc)
+    AC = distance(Xa, Ya, Xc, Yc)
+    area_ABC = heron_formula(AB, BC, AC)
+    return area_ABC
+
+
+def Dist(Xa, Ya, Xb, Yb, Xp, Yp):
+    area_ABC = Area(Xa, Ya, Xb, Yb, Xp, Yp)
+
+    AB = distance(Xa, Ya, Xb, Yb)
+    print('AB: ',AB)
+    dist_P_AB = (2 * area_ABC) / AB
+    print('dist_P_AB', dist_P_AB)
+    return dist_P_AB
+
+
+
+Xa, Ya = int(input('Xa: ')), int(input('Ya: '))
+Xb, Yb = int(input('Xb: ')), int(input('Yb: '))
+Xp, Yp = int(input('Xp: ')), int(input('Yp: '))
+
+result = Dist(Xa, Ya, Xb, Yb, Xp, Yp)
+print("P nuqtadan AB kesmaga tushurilgan balandlik:", result)
+
+
+# 60 - masala 50/50
+
+import math
+
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+
+def heron_formula(a, b, c):
+    s = (a + b + c) / 2
+    return math.sqrt(s * (s - a) * (s - b) * (s - c))
+
+
+def Area(Xa, Ya, Xb, Yb, Xc, Yc):
+    AB = distance(Xa, Ya, Xb, Yb)
+    BC = distance(Xb, Yb, Xc, Yc)
+    AC = distance(Xa, Ya, Xc, Yc)
+
+    area_ABC = heron_formula(AB, BC, AC)
+
+    return area_ABC
+
+
+def Dist(Xa, Ya, Xb, Yb, Xp, Yp):
+    area_ABC = Area(Xa, Ya, Xb, Yb, Xp, Yp)
+
+    AB = distance(Xa, Ya, Xb, Yb)
+    dist_P_AB = (2 * area_ABC) / AB
+
+    return dist_P_AB
+
+
+def Heights(Xa, Ya, Xb, Yb, Xc, Yc, Ha, Hb, Hc):
+    dist_AB = Dist(Xa, Ya, Xb, Yb, Xc, Yc)
+    dist_BC = Dist(Xb, Yb, Xc, Yc, Xa, Ya)
+    dist_AC = Dist(Xa, Ya, Xc, Yc, Xb, Yb)
+
+    return dist_AB, dist_BC, dist_AC
+
+
+
+Xa, Ya = int(input('Xa: ')), int(input('Ya: '))
+Xb, Yb = int(input('Xb: ')), int(input('Yb: '))
+Xc, Yc = int(input('Xc: ')), int(input('Yc: '))
+Ha, Hb, Hc = int(input('Ha: ')), int(input('Hb: ')), int(input('Hc: '))
+
+
+resultA = Heights(Xa, Ya, Xb, Yb, Xc, Yc, Ha, Hb, Hc)
+resultB = Heights(Xa, Ya, Xb, Yb, Xc, Yc, Ha, Hb, Hc)
+resultC = Heights(Xa, Ya, Xb, Yb, Xc, Yc, Ha, Hb, Hc)
+print("A tomoniga tushurilgan balandlik:", resultA)
+print("B tomoniga tushurilgan balandlik:", resultB)
+print("C tomoniga tushurilgan balandlik:", resultC)
 
 
 
