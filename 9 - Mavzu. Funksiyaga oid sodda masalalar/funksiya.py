@@ -1480,9 +1480,9 @@ def Dist(Xa, Ya, Xb, Yb, Xp, Yp):
 
     AB = distance(Xa, Ya, Xb, Yb)
     print('AB: ',AB)
-    dist_P_AB = (2 * area_ABC) / AB
-    print('dist_P_AB', dist_P_AB)
-    return dist_P_AB
+    dist_p_AB = (2 * area_ABC) / AB
+    print('dist_P_AB', dist_p_AB)
+    return dist_p_AB
 
 
 
