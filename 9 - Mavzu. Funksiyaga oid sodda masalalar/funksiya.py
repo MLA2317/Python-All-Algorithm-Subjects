@@ -1455,6 +1455,7 @@ print("ACD uchburchak perimetri:", perimeter_acd)
 
 
 # 59 - masala
+
 import math
 
 def distance(x1, y1, x2, y2):
