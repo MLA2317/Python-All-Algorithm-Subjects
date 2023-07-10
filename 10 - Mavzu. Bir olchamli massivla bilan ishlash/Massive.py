@@ -3,7 +3,10 @@
 # 1. Massiveni hosil qilish va elementlarini kiritish
 
 
+
 # 1 - masala
+# n natural soni berilgan. Dastlabki n ta toq sondan tashkil topgan massivni hosil qiling va
+# elementlarini chiqaring.
 n = 5
 odd_array = []
 num = 1
@@ -16,18 +19,31 @@ print(odd_array)
 
 
 # 2 - masala
-n = int(input('Butun son kiriting: '))
-daraja_array = []
-
+# n natural soni berilgan. 2 sonining dastlabki n ta darajasidan tashkil topgan massivni hosil
+# qiling va elementlarini chiqaring. (1, 2, 4, 8, ....)
+# with arr
+n = int(input('Daraja son kiriting: '))
+arr = []
+s = 1
 for i in range(n):
-    daraja_array.append(2 ** i)
+    result = 2 ** i
+    arr.append(result)
+print('Result', arr[-1:])
 
-print(daraja_array)
+# without array
+n = int(input('Daraja son kiriting: '))
+s = 1
+for i in range(1, n):
+    s *= 2
+    print(s)
+print('Result', s)
 
 
 
 # 3 - masala
-
+# n natural soni va arifmetik progressiyaning dastlabki hadi A va ayirmadi D berilgan. Arifmetik
+# progressiyaning dastlabki n ta hadidan tashkil topgan massivni hosil qiling va elementlarini chiqaring.
+# Ai = Ai-1 + D
 n = int(input('N: '))  # 5
 A = int(input('A: '))  # 1
 D = int(input('D: '))  # 3
@@ -41,7 +57,9 @@ print(progression_array)
 
 
 # 4 - masala
-
+#  n natural soni va geometrik progressiyaning dastlabki hadi A va maxraji D berilgan. Geometrik
+# progressiyaning dastlabki n ta hadidan tashkil topgan massivni hosil qiling va elementlarini chiqaring.
+# Ai = Ai-1 * D
 n = int(input('N: '))
 A = int(input('A: '))
 D = int(input('D: '))
@@ -55,7 +73,10 @@ print(progression_arr)
 
 
 # 5 - masala
-
+# n natural soni berilgan. Dastlabki n ta Fibonachchi sonlaridan tashkil topgan massivni hosil
+# qiling va elementlarini chiqaring.
+# FO = 1; F1 = 1; F[k] = F[k-1] + F[k-2], k = 2, 3, 4, ...
+#
 n = int(input('N: '))
 fib = [1, 1]
 for i in range(2, n):
@@ -68,7 +89,9 @@ print('Fibonachi:', fib[:n])
 
 
 # 6 - masala
-
+# n natural soni va A, B butun sonlari berilgan (n > 2). a[0] = A; a[1] = B; boshqa elementlari
+# o'zidan oldingi barcha elementlari yig' indisiga teng bo'lgan massivni hosil qiling va elementlarini
+# chiqaring.
 n = int(input('N: '))
 A = int(input('A: '))
 B = int(input('B: '))
@@ -79,9 +102,27 @@ for i in range(2, n):
 
 print('Yegindisi:', arr)
 
+# solve without sum libraries
+n = int(input('N: '))
+A = int(input('A: '))
+B = int(input('B: '))
+arr = [A, B]
+s = 0
+
+for i in range(2, n):
+    s = 0
+    print('ssss', s)
+    for j in range(i):
+        print('j', j)
+        s += arr[j]
+        print('s', s)
+    arr.append(s)
+print('arr', arr)
+
 
 # 7 - masala
-
+#  n ta elementdan tashkil topgan massiv berilgan. Uning elementlarini teskari tartibda
+# chiqaruvchi programma tuzilsin.
 n = int(input('N: '))
 arr = []
 
@@ -89,19 +130,23 @@ for i in range(n):
     element = int(input(f"{i+1}- chi elementni kiriting: "))
     arr.append(element)
 
-arr.reverse()
+# arr.reverse()
 
-for i in arr:
-    # print('i', i)
-    print('Teskari tartib - ', arr)
-#
-# for i in range(n-1, -1, -1):
+# for i in arr:
 #     # print('i', i)
-#     print('Teskari tartib - ', arr[i])
+#     print('Teskari tartib - ', arr)
+
+# solve without revelese library
+for i in range(n-1, -1, -1):
+    # print('i', i)
+    print('Teskari tartib - ', arr[i])
 
 
 # 8 - masala False
-
+# n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari orasidan toglarini
+# indekslari o'sish tartibida chiqaruvchi va ularning sonini chigaruvchi programma tuzilsin.
+# Massiv elementlar: 4 5 7 8 6 9
+# Natija: 5 7 9 toglar soni = 3
 n = int(input('N: '))
 toqlar = []
 
@@ -115,6 +160,10 @@ count = 0
 
 
 # 9 - masala
+# n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari orasidan juftlarini indekslari
+# kamayish tartibida chiqaruvchi va ularning sonini chiqaruvchi programma tuzilsin.
+# Massiv elementlar: 4 5 7 8 6 9
+# Natija: 6 8 4 juftlar soni = 3
 n = int(input('N: '))
 juft = []
 for i in range(n):
@@ -133,6 +182,7 @@ print('Juftliklar soni:', count)
 
 
 # 10 - masala
+
 n = int(input('N: '))
 arr = []
 
@@ -160,7 +210,7 @@ print("Natija:", ' ', natija)
 
 
 
-# 11 - masala
+# 11 - masala solve without ::
 
 n = int(input('N: '))
 K = int(input('K: '))
@@ -174,7 +224,29 @@ result = arr[K-1::K]
 print('result-', result)
 
 
-# 12 - masala
+# solve without [::]
+n = int(input('N: '))
+K = int(input('K: '))
+arr = []
+
+for i in range(n):
+    element = int(input(f"{i+1}-chi element: "))
+    arr.append(element)
+
+result = []
+index = K - 1
+print('index', index)
+
+while index < n:
+    result.append(arr[index])
+    print('result', result)
+    index += K
+    print('in', index)
+
+print('result', result)
+
+
+# 12 - masala Falsce without ::
 n = int(input('N: '))
 arr = []
 for i in range(n):
@@ -184,7 +256,7 @@ for i in range(n):
 result = arr[::2]
 print('Result:', result)
 
-# 13 - masala
+# 13 - masala False without ::
 n = int(input('N: '))
 arr = []
 for i in range(n):
@@ -195,7 +267,7 @@ result = arr[::-2]
 print('Result:', result)
 
 
-# 14 - masala
+# 14 - masala False ::
 n = int(input('N: '))
 arr = []
 for i in range(n):
@@ -207,7 +279,7 @@ result = arr[1::2] + arr[::2]
 print('result', result)
 
 
-# 15 - masala
+# 15 - masala False ::
 n = int(input('N:'))
 arr = []
 for i in range(n):
@@ -222,25 +294,273 @@ print('arr2', arr[-1::-2])
 print('result', result)
 
 
-# 16 - masala 50/50
+# 16 - masala True
 n = int(input('N: '))
 arr = []
 for i in range(n):
     element = int(input(f'{i+1}-chi elementni kiriting: '))
     arr.append(element)
 
+result = [arr[0], arr[n-1], arr[1], arr[n-2], arr[2], arr[n-3]]
 
-# for i in range(len(arr)):
-result = arr[arr // 2] + arr[-((arr // 2) + 1)]
-result = [arr[i // 2] if i % 2 == 0 else arr[-((i // 2) + 1)] for i in range(len(arr))] # True
-
-print('Result: ', result)
+#
+print('Result:', result)
 
 
-# 17 - masala
+# 17 - masala True
+n = int(input('N: '))
+A = []
+for i in range(n):
+    element = int(input(f'{i+1}-chi elementni kiriting: '))
+    A.append(element)
 
+output = [A[0], A[1], A[n-1], A[n-2], A[3], A[4], A[n-3], A[n-4]]
+print(output)
 
 # 2. Massive elementlarini taxlil qilish
 
 # 18 - masala
+
+# 18 - masala
+n = int(input('N: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}-chi elementni kiriting: "))
+    arr.append(element)
+
+if len(arr) > 1:
+    result = min(arr[:-1])
+else:
+    result = 0
+
+print('Result:', result)
+
+
+# 19 - masala
+n = int(input('N: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}-cho elementni kiriting: "))
+    arr.append(element)
+
+if len(arr) > 2:
+    natija = max(i for i in range(1, len(arr)-1) if arr[i] > arr[0] and arr[i] < arr[-1])
+else:
+    natija = 0
+
+print("Result:", natija)
+
+
+# 20 - masala
+n = int(input('N: '))
+K, L = int(input('K: ')), int(input('L: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}'s enter element > "))
+    arr.append(element)
+
+
+sum_element = sum(arr[K:L+1])
+print('ar', arr[K:L])
+print('sum', sum_element)
+
+
+# 21 - masala
+n = int(input('N: '))
+K, L = int(input('K: ')), int(input('L: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}'s enter element > "))
+    arr.append(element)
+
+sum_element = 0
+count = 0
+for i in range(K, L+1):
+    sum_element += arr[i]
+    print('sum-', sum_element)
+    count += 1
+    print('count', count)
+
+orta_arifmettika = sum_element / count
+print(orta_arifmettika)
+
+
+# 22 - masala
+n = int(input('N: '))
+K, L = int(input('K: ')), int(input('L: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}'s enter element > "))
+    arr.append(element)
+
+
+sum_element = sum(arr[:K]) + sum(arr[L+1:])
+print('sum1', sum(arr[:K]), 'sum2', sum(arr[L+1:]))
+print('sum_elemt tashqari: ', sum_element)
+
+
+# 23 - masala
+n = int(input('N: '))
+K, L = int(input('K: ')), int(input('L: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}'s enter element > "))
+    arr.append(element)
+
+
+s = arr[K+1:L]
+print(s)
+orta_arifmetika = sum(s) / len(s)
+
+print('orta arifmetika:', orta_arifmetika)
+
+
+# 24 - masala
+n = int(input('N: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}'s enter element > "))
+    arr.append(element)
+
+diff = arr[1] - arr[0]
+aks_holda = diff < 0
+if aks_holda:
+    diff *= -1
+else:
+    diff = 0
+
+print(diff)
+
+
+# 25 - masala
+n = int(input('N: '))
+arr = []
+for i in range(n):
+    element = int(input(f"{i+1}'s enter element > "))
+    arr.append(element)
+
+maxraj = arr[1] / arr[0]
+aks_holda = maxraj < 1
+if aks_holda:
+    maxraj = 0
+
+print(maxraj)
+
+
+# 26 - masala 50/50
+n = int(input("N: "))
+array = []
+
+for i in range(n):
+    num = int(input("Enter element {}: ".format(i+1)))
+    array.append(num)
+
+
+ketmaket = True
+for i in range(n-1):
+    if array[i] % 2 == array[i+1] % 2:
+        print('arr[i]%2', array[i] % 2 == array[i+1] % 2)
+        ketmaket = False
+        print('js', ketmaket)
+        break
+
+if ketmaket:
+    print("0")
+else:
+    for i in range(n-1):
+        print('i', i)
+        if array[i] % 2 == array[i+1] % 2:
+            print("Birinchi buzilgan index elementi", i+1)
+            break
+
+
+# 27 - masala
+n = int(input("N: "))
+array = []
+
+for i in range(n):
+    num = int(input("Enter element {}: ".format(i+1)))
+    array.append(num)
+
+
+# manfiy va musbat arrayni ketma ketlik tekshirish
+ketmaket = True
+for i in range(n-1):
+    print('i', i)
+    if array[i] >= 0 and array[i+1] >= 0:
+        print('arr[i]arr[i+1]', array[i] >= 0 and array[i+1] >= 0)
+        ketmaket = False
+        break
+
+    if array[i] < 0 and array[i+1] < 0:
+        print('arr<0 arr[i+1]<0', array[i] < 0 and array[i+1] < 0)
+        ketmaket = False
+        break
+
+if ketmaket:
+    print('0')
+else:
+    for i in range(n-1):
+        if(array[i] >= 0 and array[i+1] >= 0) or (array[i] < 0 and array[i+1] < 0):
+            print('ketma ketlikni buzgan birinchi element indeksi', i+1)
+            break
+
+
+
+# 28 - masala
+n = int(input('N: '))
+arr = []
+for i in range(n):
+    element = int(input('Enter element {}: ' .format(i+1)))
+    arr.append(element)
+
+min_value = float('inf')
+for i in range(0, n, 2):
+    if arr[i] < min_value:
+        min_value = arr[i]
+print('Result', min_value)
+
+
+# 29 - masala
+
+n = int(input('N: '))
+arr = []
+for i in range(n):
+    element = int(input('Enter element {}: ' .format(i+1)))
+    arr.append(element)
+
+max_value = float('-inf')
+for i in range(1, n, 2):
+    if arr[i] > max_value:
+        max_value = arr[i]
+
+print('Max number', max_value)
+
+
+# 30 - masala
+n = int(input("N: "))
+array = []
+
+
+for i in range(n):
+    num = int(input("Butun son kiriting {}: ".format(i+1)))
+    array.append(num)
+
+max_index = -1
+max_count = 0
+
+
+for i in range(n):
+    if array[i] > array[max_index]:
+        max_index = i
+        max_count = 1
+    elif array[i] == array[max_index]:
+        max_count += 1
+
+
+for i in range(n):
+    if array[i] == array[max_index]:
+        print(i)
+
+print("Maksimum element:", max_count)
 
