@@ -1211,3 +1211,115 @@ for i in range(n):
 print('B Massive:', b)
 
 
+# 61 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+b = []
+for k in range(n):
+    arr = a[k:]
+    s = sum(arr)
+    orta_arif = s / len(a)
+    b.append(orta_arif)
+
+print("Array b:", b)
+
+
+# 62 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} -- > '))
+    a.append(element)
+
+b = []
+for i in a:
+    if i > 0:
+        b.append(i)
+
+c = []
+for i in a:
+    if i < 0:
+        c.append(i)
+
+print('B massivni element soni:', len(b))
+print('B massivni element:', b)
+
+print('C massivni element soni:', len(c))
+print('C massivni element:', c)
+
+
+# 63 - masala
+n = int(input('N: '))
+
+print('A massive element kiriting:')
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+print('B massive element kiriting:')
+b = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    b.append(element)
+
+c = []
+
+for element in a:
+    c.append(element)
+
+
+for element in b:
+    c.append(element)
+
+
+n = len(c)
+for i in range(n - 1):
+    for j in range(n - i - 1):
+        if c[j] > c[j + 1]:
+            print('c[j]', c[j])
+            c[j], c[j + 1] = c[j + 1], c[j]
+            print('c[j]', c[j], 'va', c[j+1])
+
+print('c', c)
+
+
+# 64 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+b = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    b.append(element)
+
+c = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    c.append(element)
+
+d = []
+for a in a:
+    d.append(a)
+for b in b:
+    d.append(b)
+for c in c:
+    d.append(c)
+
+n = len(d)
+for i in range(n - 1):
+    for j in range(n - i - 1):
+       if d[j] > d[j+1]:
+           d[j], d[j+1] = d[j+1], d[j]
+
+print('d=', d)
+
+
+# 4. Massive elementlarni o'zgartirish
