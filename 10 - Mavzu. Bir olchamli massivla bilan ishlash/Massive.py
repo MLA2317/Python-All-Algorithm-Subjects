@@ -1323,3 +1323,446 @@ print('d=', d)
 
 
 # 4. Massive elementlarni o'zgartirish
+
+
+# 65 - masala
+n = int(input("Massiv uzunligini kiriting: "))
+k = int(input("Elementni o'rnatish uchun k ni kiriting: "))
+
+massiv = []
+for i in range(n):
+    massiv.append(int(input(f"massiv[{i}]= ")))
+
+massiv[-1] += k
+
+print("Natija:", massiv)
+
+
+# 66 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+juft = False
+for i in range(n):
+    if a[i] % 2 == 0:
+        a[i] += 2
+        print('a[i]', a[i])
+        juft = True
+        break
+
+if juft:
+    print("Ortirilgan birinchi son:", a)
+else:
+    print("Juft son topilmadi.")
+
+
+# 67 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+Toq = False
+last_index = -1
+for i in range(n):
+    if a[i] % 2 != 0:
+        last_index = i
+        print('last_index', last_index)
+        Toq = True
+
+
+if Toq:
+    a[last_index] += 1
+    print("Ortirilgan oxirgi son::", a)
+else:
+    print("Toq son topilmadi.")
+
+
+# 68 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} - > '))
+    a.append(element)
+
+min_index = 0
+max_index = 0
+
+for i in range(1, n):
+    if a[i] < a[min_index]:
+        min_index = i
+    elif a[i] > a[max_index]:
+        max_index = i
+
+a[min_index], a[max_index] = a[max_index], a[min_index]
+
+print('Orni almashtirilgan', a)
+
+
+# 69 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f"{i+1} --> "))
+    a.append(element)
+
+
+for i in range(0, n, 2):
+    print('i', i)
+    a[i], a[i+1] = a[i+1], a[i]
+
+print('a', a)
+
+
+# 70 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+half = n // 2
+print('half', half)
+for i in range(half):
+    a[i], a[i+half] = a[i+half], a[i]
+    print('a[i]', a[i], 'va', a[i+half])
+
+print('Massivni birinchi yarmi va ikkinchi yarmi qiymati almashtirilsin', a)
+
+
+# 71 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+for i in range(n // 2):
+    print('i', i)
+    a[i], a[n - i - 1] = a[n - i - 1], a[i]
+    print('a[i]', a[i], 'va', 'a[n-i-1]', a[n-i-1])
+
+print("Yangilangan massiv:", a)
+
+
+# 72 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+k = int(input("k ni kiriting: "))
+h = int(input("h ni kiriting: "))
+print(a[k-1], a[h-1])
+a[k-1], a[h-1] = a[h-1], a[k-1]
+print('a[k-1]', a[k-1], 'va', 'a[h-1]', a[h-1])
+
+print("Yangilangan massiv:", a)
+
+
+# 73 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} -- > '))
+    a.append(element)
+
+k = int(input("k ni kiriting: "))
+h = int(input("h ni kiriting: "))
+
+s = a[k]
+a[k] = a[h]
+a[h] = s
+
+print('Massive a[k] va a[h] orasida qiymat:', a)
+
+
+# 74 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+min = a[0]
+max = a[0]
+min_index = 0
+max_index = 0
+
+for i in range(1, n):
+    if a[i] < min:
+        min = a[i]
+        min_index = i
+        print('min_index', min_index)
+    if a[i] > max:
+        max = a[i]
+        max_index = i
+        print('max_index', max_index)
+
+if min_index != max_index:
+    a[min_index] = 0
+    a[max_index] = 0
+
+print("Yangilangan massiv:", a)
+
+
+# 75 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+min_a = a[0]
+max_a = a[0]
+max_index = 0
+min_index = 0
+
+for i in range(1, n):
+    if a[i] < min_a:
+        min_a = a[i]
+        max_index = i
+        print('max', max_index)
+    elif a[i] > min_a:
+        min_a = a[i]
+        min_index = i
+        print('min', min_index)
+a[min_index], a[max_index] = a[max_index], a[min_index]
+
+print('Result', a)
+
+
+# 76 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+for i in range(1, n - 1):
+    print('i', i)
+    if a[i] > a[i - 1] and a[i] > a[i + 1]:
+        a[i] = 0
+
+print("Local maksimum:", a)
+
+
+
+# 77 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: "))) # 23,54,35,67,23
+
+for i in range(1, n - 1):
+    if a[i] < a[i - 1] and a[i] < a[i + 1]:
+        print('aa', a[i])
+        a[i] = a[i] ** 2 # 35**2 = 1225
+        print('a[i]', a[i])
+
+print("Massive eng kichkina soning darajasi:", a)
+
+
+# 78 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+for i in range(n):
+    if i < n - 1:
+        print('i', i)
+        orta_arifmetika = (a[i] + a[i + 1]) / 2
+        a[i] = orta_arifmetika
+        print('a', a[i])
+    else:
+        orta_arifmetika = (a[i] + a[0]) / 2
+        a[i] = orta_arifmetika
+        print('aa', a[i])
+
+print("Orta arifmetika:", a)
+
+
+# 79 - masala
+n = int(input("n: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}-chi elementni kiriting: ")))
+
+last_element = a[-1]
+for i in range(n-1, 0, -1):
+    print('i', i)
+    a[i] = a[i-1]
+    print('a[i]', a[i])
+a[0] = 0
+print('a[0]', a[0])
+
+print("Result:", a)
+
+
+# 80 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+
+for i in range(n-2, -1, -1):
+    print('i', i)
+    a[i+1] = a[i]
+    print('a[i+1]', a[i+1])
+a[0] = 0
+
+print('Result', a)
+
+
+# 81 - masala 50/50cFALSE
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+K = int(input('K: '))
+#
+# for i in range(K):
+#     a[i] = 0
+
+for i in range(K, n):
+    a[i] = a[i - K]
+    print('a[i]', a[i])
+print('Result', a)
+
+
+# 82 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} -> '))
+    a.append(element)
+
+k = int(input('K:'))
+for i in range(n-k, n):
+    print('i', i)
+    a[i] = a[i - n + k]
+    print('a[i]', a[i])
+
+for i in range(k):
+    a[i] = 0
+
+print('Result', a)
+
+
+# 83 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} --> '))
+    a.append(element)
+
+last_value = a[n-1]
+
+for i in range(n-1, 0, -1):
+    print('i', i)
+    a[i] = a[i-1]
+    print('a[i]', a[i])
+
+a[0] = last_value
+
+print('Result', a)
+
+
+# 84 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    element = int(input(f'{i+1} -- > '))
+    a.append(element)
+
+last_index = a[n - 1]
+
+for i in range(n - 1, 0, -1):
+    a[i] = a[i - 1]
+
+a[0] = last_index
+
+print('Result', a)
+
+
+# 85 - masala 50/50 FAlse
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1} -->: ")))
+
+k = int(input("k: "))
+
+s = a[-k:] + a[:-k]
+
+for i in range(n):
+    a[i] = s[i]
+
+print("Result:", a)
+
+
+# 86 - masala 50/50 False
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1}  --> : ")))
+
+k = int(input("k: "))
+
+s = a[n-k:] + a[:n-k]
+
+for i in range(n):
+    a[i] = s[i]
+
+print("Yangilangan massiv:", a)
+
+
+
+# 87 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} -- > ')))
+
+birinchi_element = a[0]
+
+for i in range(n-1, 0, -1):
+    a[i] = a[i-1]
+
+a[0] = birinchi_element
+
+print("Result:", a)
+
+
+# 88 - masala
+n = int(input("N: "))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1} --> ")))
+
+last_element = a[n-1]
+
+for i in range(n-1, 0, -1):
+    a[i] = a[i-1]
+
+a[0] = last_element
+
+print("Yangilangan massiv:", a)
+
+
+# 89 - masala 50/50
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f"{i+1} --> ")))
+
+max_index = a.index(max(a))
+
+for i in range(n-1, 0, -1):
+    a = a[max_index + 1:] + a[:max_index + 1]
+
+print("Yangilangan massiv:", a)
