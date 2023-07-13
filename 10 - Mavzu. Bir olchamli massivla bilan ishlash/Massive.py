@@ -1766,3 +1766,482 @@ for i in range(n-1, 0, -1):
     a = a[max_index + 1:] + a[:max_index + 1]
 
 print("Yangilangan massiv:", a)
+
+
+# 5. Massivga element qo'shish va o'chirish
+
+
+# 90 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+k = int(input('K: '))
+
+a.pop(k)
+
+print('Result:', a)
+
+
+# 91 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+k = int(input('K: '))
+m = int(input('M: '))
+
+
+if k > 0 or k >= n or k >= m:
+    print('Error indeks')
+else:
+    result = []
+    for i in range(k, m + 1):
+        print('i', i)
+        result.append(a[i])
+        print('result')
+
+    print('Elementlar soni:', len(result))
+    print("Elements: ", end="")
+    for element in result:
+        print(element, end=' ')
+
+
+# 92 - masala
+n = int(input("N: "))
+arr = []
+
+for i in range(n):
+    arr.append(int(input(f"{i + 1} -- >  ")))
+
+result = []
+for element in arr:
+    if element % 2 != 0:
+        result.append(element)
+
+print(f"Element soni: {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 93 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} -- > ')))
+
+result = []
+i = 1
+while i < n:
+    result.append(a[i])
+    i += 2
+
+print('Element soni', len(result))
+print('Elements:', end='')
+for element in result:
+    print(element, end=' ')
+
+
+# 94 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+result = []
+i = 0
+while i < n:
+    result.append(a[i])
+    i += 2
+
+print('Element soni:', len(result))
+print('Element:', end='')
+for ekement in result:
+    print(ekement, end=' ')
+
+
+# 95 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} -- > ')))
+
+x = int(input('X: '))
+
+found = False
+result = []
+for element in a:
+    if element == x and not found:
+        found = True
+    else:
+        result.append(element)
+
+if found:
+    print(f"Element soni: {len(result)}")
+    print("Elements: ", end="")
+    for element in result:
+        print(element, end=" ")
+else:
+    print("Element arr ni ichidan topilmadi.")
+
+
+# 96 - masala
+
+n = int(input("N: "))
+arr = []
+
+for i in range(n):
+    arr.append(int(input(f"{i + 1} --> ")))
+
+result = []
+s = []
+for element in arr:
+    if element not in s:
+        print(element)
+        s.append(element)
+        result.append(element)
+
+print(f"Element soni: {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 97 - masala
+n = int(input("N: "))
+arr = []
+
+for i in range(n):
+    arr.append(int(input(f"{i + 1} --> ")))
+
+last_number = {}
+result = []
+for i in range(n):
+    element = arr[i]
+    print('element', element)
+    last_number[element] = i
+    print('last_numer[element]', last_number[element])
+
+for i in range(n):
+    element = arr[i]
+    print('ele', element)
+    if i == last_number[element]:
+        print('i==last_numver', i == last_number)
+        result.append(element)
+        print('result', result)
+
+print(f"Number of elements: {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 98 - masala
+n = int(input("N: "))
+arr = []
+
+for i in range(n):
+    arr.append(int(input(f"{i + 1} --> "))) # 1,2,3,4,5,3,6,7,3
+
+element_counts = {}
+for element in arr:
+    if element in element_counts:
+        element_counts[element] += 1
+    else:
+        element_counts[element] = 1
+
+result = []
+for element in arr:
+    if element_counts[element] >= 3:
+        result.append(element)
+
+print(f"Elementlar soni {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 99 - masala
+n = int(input("N: "))
+arr = []
+
+for i in range(n):
+    arr.append(int(input(f"{i + 1} --> ")))
+
+s = {}
+for element in arr:
+    if element in s:
+        print('element:', element)
+        s[element] += 1
+        print('s', s[element])
+    else:
+        s[element] = 1
+        print('ss', s[element])
+
+result = []
+for element in arr:
+    if s[element] <= 2:
+        result.append(element)
+
+print(f"Element soni {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 100 - masala
+n = int(input("N: "))
+arr = []
+
+for i in range(n):
+    arr.append(int(input(f"{i + 1} --> ")))
+
+s = {}
+for element in arr:
+    if element in s:
+        s[element] += 1
+    else:
+        s[element] = 1
+
+result = []
+for element in arr:
+    if s[element] == 2:
+        result.append(element)
+
+print(f"Element soni: {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 101 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) # 1,2,3,4,5
+
+k = int(input('K: ')) # 3
+if k < 0 or k >= n:
+    print('Error number')
+else:
+    result = []
+    for i in range(n):
+        if i == k: # 4,3 = 1,2,3,0,4,5
+            result.append(0)
+        result.append(a[i])
+
+
+
+    print(f"Element soni: {len(result)}")
+    print("Elements: ", end="")
+    for element in result:
+        print(element, end=" ")
+
+
+# 102 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) # 1,2,3,4,5
+
+
+k = int(input('K: ')) # 3
+if k < 0 or k >= n:
+    print('Error number')
+else:
+    result = []
+    for i in range(n):
+        result.append(a[i])
+        if i == k: # 4,3 = 1,2,3,4,0,5
+            result.append(0)
+
+    print(f"Element soni: {len(result)}")
+    print("Elements: ", end="")
+    for element in result:
+        print(element, end=" ")
+
+
+# 103 - masala
+n = int(input("N: "))
+a = []
+
+for i in range(n):
+    a.append(int(input(f"{i + 1} --> ")))
+
+min_index = 0
+max_index = 0
+
+for i in range(1, n):
+    if a[i] < a[min_index]:
+        min_index = i
+        print('min_index', min_index)
+    if a[i] > a[max_index]:
+        max_index = i
+        print('max_index', max_index)
+
+result = []
+for i in range(n):
+    result.append(a[i])
+    if i == min_index:
+        result.append(0)
+    elif i == max_index:
+        result.insert(i, 0)
+        print('result', result)
+
+print(f"Element soni: {len(result)}")
+print("Elements: ", end="")
+for element in result:
+    print(element, end=" ")
+
+
+# 104 - masala
+n = int(input("N: "))
+a = []
+
+for i in range(n):
+    a.append(int(input(f"{i + 1} --> ")))
+
+k = int(input("K: "))
+m = int(input("M: "))
+
+if k < 0 or k >= n:
+    print("Error number!")
+elif m < 1 or m > 10:
+    print("Error enter number!")
+else:
+    result = []
+    for i in range(n):
+        if i == k:
+            result.extend([0] * m)
+        result.append([i])
+
+    print(f"Elementlar soni: {len(result)}")
+    print("Elements: ", end="")
+    for element in result:
+        print(element, end=" ")
+
+
+# 105 - masala
+n = int(input("N: "))
+a = []
+
+for i in range(n):
+    a.append(int(input(f"{i + 1} --> ")))
+
+k = int(input("K: "))
+m = int(input("M: "))
+
+if k < 0 or k >= n:
+    print("Error number!")
+elif m < 1 or m > 10:
+    print("Error enter number!")
+else:
+    result = []
+    for i in range(n):
+        result.append(a[i])
+        if i == k:
+            result.extend([0] * m)
+
+    print(f"Elementlar soni: {len(result)}")
+    print("Elements: ", end="")
+    for element in result:
+        print(element, end=" ")
+
+
+# 106 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) #1,2,3,4,5
+
+result = []
+
+for i in range(0, len(a), 2):
+    if i + 1 < len(a):
+        result.append(a[i] + a[i+1]) #0,2 = 1+2,3+4 =3,7
+        print('result', result)
+
+print(result)
+
+
+# 107 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+result = []
+for indeks, qiymat in enumerate(a):
+    print('indeks', indeks, 'qiymat', qiymat)
+    if indeks % 2 != 0:
+        print('indek', indeks)
+        result.append(qiymat)
+        print('result1', result)
+        result.append(qiymat)
+        print('result2', result)
+print('result', result)
+
+
+# 108 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+result = [0]
+for i in a:
+    if i > 0:
+        result.append(0)
+    result.append(i)
+print(result)
+
+
+# 109 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+result = [0]
+for i in a:
+    result.append(i)
+    if i < 0:
+        result.append(0)
+print(result)
+
+
+# 110 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+result = []
+for i in range(len(a)):
+    if i % 2 == 0:
+        if i + 1 < len(a):
+            print('i+1=', i + 1)
+            result.append(a[i] + a[i+1])
+            print('result1', result)
+        else:
+            result.append(a[i])
+            print('result2', result)
+
+print(result)
+
+
+# 111 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+result = []
+for i in range(len(a)):
+    if i % 2 != 0:
+        result.extend([a[i]] * 2)
+        print('result', result)
+print(result)
