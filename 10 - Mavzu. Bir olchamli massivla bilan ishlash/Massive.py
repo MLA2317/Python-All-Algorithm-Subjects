@@ -2245,3 +2245,80 @@ for i in range(len(a)):
         result.extend([a[i]] * 2)
         print('result', result)
 print(result)
+
+
+
+
+# 6. Massivni saralash
+
+
+# 112 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append((int(input(f'{i+1} --> '))))
+
+for i in range(len(a)):
+    print('i', i)
+    for j in range(i+1, len(a)):
+        print('j', j)
+        if a[j] < a[i]:
+            a[i], a[j] = a[j], a[i]
+print(a)
+
+
+# 113 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+for i in range(len(a)):
+    eng_kichik_indeks = i
+    print('eng_kichik', eng_kichik_indeks)
+    for j in range(i+1, len(a)):
+        print('j', j)
+        if a[j] < a[eng_kichik_indeks]:
+            eng_kichik_indeks = j
+            print('kichik engg', eng_kichik_indeks)
+    a[i], a[eng_kichik_indeks] = a[eng_kichik_indeks], a[i]
+print(a)
+
+
+# 114 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+for i in range(1, len(a)):
+    print('i', i)
+    j = i
+    while j > 0 and a[j] < a[j-1]:
+        print('j', j, 'va', a[j])
+        a[j], a[j-1] = a[j-1], a[j]
+        print('a[j]', a[j], 'va', a[j-1])
+        j -= 1
+        print('j', j)
+print(a)
+
+
+# 115 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> ')))
+
+arr = list(range(len(a)))
+print('arr', arr)
+
+for i in range(len(arr)):
+    print('i', i)
+    for j in range(i+1, len(arr)):
+        print('j', j)
+        if a[arr[j]] < a[arr[i]]:
+            arr[i], arr[j] = arr[j], arr[i]
+print('arr', arr)
+natija = [a[i] for i in arr]
+print('natija', natija)
+print(natija)
