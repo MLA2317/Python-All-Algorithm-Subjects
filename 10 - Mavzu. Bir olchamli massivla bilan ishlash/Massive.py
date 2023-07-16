@@ -2322,3 +2322,235 @@ print('arr', arr)
 natija = [a[i] for i in arr]
 print('natija', natija)
 print(natija)
+
+
+
+# 7. Butun sonlar seriyasi
+
+# 116 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) #2,4,4,6,6,6,1,1,8,8,8,8,5
+
+b = []
+c = []
+
+i = 0
+while i < len(a): # 13
+    element = a[i]
+    print('element', element)
+    seriya_uzunligi = 1
+
+    while i + 1 < len(a) and a[i] == a[i+1]:
+        seriya_uzunligi += 1
+        print('seriya uzunligi', seriya_uzunligi)
+        i += 1
+
+    b.append(seriya_uzunligi)
+    c.append(element)
+
+    i += 1
+
+print('B massive: ', b)
+print('C massive', c)
+
+
+
+# 117 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} -- > ')))
+
+
+result = []
+for i in a:
+    result.append(i)
+    print('result', result)
+    if i == 0:
+        result.append(0)
+
+print(result)
+
+
+# 118 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) #0,1,2,3,0,4,5,6,0,7,8,9,0,10
+
+result = []
+
+for i in range(n - 1):
+    print('i', i)
+    if a[i] == 0:
+        print('a[i]', a[i])
+        if i + 1 < n:
+            result.append(a[i+1])
+
+print('Result:', result)
+
+
+# 119 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) #1,2,3,4,5,6,7,8,9,10
+
+result = []
+
+for i in range(n - 1):
+    result.append(a[i])
+    if a[i] != a[i + 1]:
+        print('a[i] != a[i+1]', a[i], a[i+1])
+        result.append(a[i])
+        print('result', result)
+
+
+result.append(a[-1])
+print('a[-1]', a[-1])
+
+print("Result:", result)
+
+
+# 120 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) #1,2,2,3,4,4,4,5,5,5,6,6,6,6
+
+result = []
+
+
+count = 1
+for i in range(1, n):
+    if a[i] == a[i - 1]:
+        count += 1
+    else:
+        for j in range(count - 1):
+            print('j1', j)
+            result.append(a[i - 1])
+            print('res', result)
+
+        count = 1
+        print('count', count)
+
+for j in range(count - 1):
+    print('j2', j)
+    result.append(a[n - 1])
+
+
+print("Result:", result)
+
+
+# 121 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} -- > ')))
+
+k = int(input('K: '))
+
+result = []
+count = 1
+for i in range(1, n):
+    if a[i] == a[i - 1]:
+        count += 1
+        print('count', count)
+    else:
+        if count < k:
+            print('c', count)
+            for j in range(count):
+                print('j', j)
+                result.append(a[i-1])
+                print('resultttt', result)
+        else:
+            for j in range(2 * count):
+                print('jjjjjj', j)
+                result.append(a[i - 1])
+                print('ressss', result)
+
+
+        count = 1
+
+if count < k:
+    for i in range(count):
+        result.append(a[n - 1])
+else:
+    for j in range(2 * count):
+        result.append(a[n - 1])
+
+print('Result:', result)
+
+
+
+# 122 - masala
+n = int(input('N: '))
+a = []
+for i in range(n):
+    a.append(int(input(f'{i+1} --> '))) #1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5
+
+K = int(input("K: "))
+count = 0
+
+i = 0
+while i < len(a) - K + 1:
+    is_series = True
+    for j in range(i, i + K - 1):
+        if a[j] != a[j + 1]:
+            is_series = False
+            break
+    if is_series:
+        count += 1
+        for j in range(i, i + K):
+            a[j] = -1
+        i += K
+    else:
+        i += 1
+
+a = [x for x in a if x != -1]
+
+print('Result:', a)
+print('count ', count)
+
+
+
+# 123 - masala 50/50
+# n = int(input('N: '))
+# a = []
+# for i in range(n):
+#     a.append(int(input(f'{i+1} --> ')))
+#
+# K = int(input("K: "))
+
+
+# 124 - masala False
+# n = int(input('N: '))
+# a = []
+# for i in range(n):
+#     a.append(int(input(f'{i+1} --> ')))
+#
+# K = int(input("K: "))
+# series_count = 0
+# start_index = 0
+# for i in range(1, len(a)):
+#     if a[i] - a[i-1] != 1:
+#         series_count += 1
+#         if series_count == K:
+#             start_index = i
+#     if series_count > K:
+#         break
+#
+# if series_count < K:
+#     print("K dan kichkina bolish kerak")
+# else:
+#     end_index = len(a) - 1
+#     for i in range(start_index, len(a)):
+#         if a[i] - a[i-1] != 1:
+#             end_index = i - 1
+#             break
+#
+#     a[start_index], a[end_index] = a[end_index], a[start_index]
+#     print("Modified Array:", a)
+
